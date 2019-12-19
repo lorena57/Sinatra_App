@@ -10,8 +10,8 @@
     <input type="submit" value="Login">
 </form>
 
-<% if @user && @user.errors.any? %>
-    <% @users.errors.full_messages.each do |error| %>
-    <p class="danger"><%= error %></p>
-    <% end %>
+<% if @user && @user.errors.any?%>
+   <% @user.errors.full_messages.each do |error| %>
+      <p class="danger"><%= error %></p>
+   <% end %>
 <% end %>

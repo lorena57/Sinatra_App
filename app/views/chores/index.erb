@@ -1,0 +1,12 @@
+<% if !@chores.empty? %>
+    <ul>
+        <% @chores.each do |chore| %>
+            <li><a href= "/chores/<%= chore.id %>"><%= chore.name %></a></li>
+        <% end %>
+    </ul>
+        <% else %>
+            <p>You don't currently have any chores! Would you like to <a href="/chores/new">add one</a>?</p>
+    <% end %>
+<br>
+
+<a href="/chores/new">New Chore</a>
