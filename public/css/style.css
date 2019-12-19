@@ -1,3 +1,7 @@
 html {
-    background-color: purple;
+    background-color: #f6f8fa;
+}
+
+.danger {
+    color: red;
 }

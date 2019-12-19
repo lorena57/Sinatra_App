@@ -1,7 +1,10 @@
-<form action="/login" method="post">
+<form action="/login" method="post" autocomplete="off">
     <label for="username">Username</label>
     <input id="username" type="text" name="username"><br/>
     <label for="password">Password</label>
     <input id="password" type="password" name="password"><br/>
+    <% if @failed %>
+    <p class="danger"> Your input was incorrect, please try again.</p>
+    <% end %>
     <input type="submit" value="Login">
 </form>
