@@ -10,12 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_12_20_040739) do
+ActiveRecord::Schema.define(version: 2019_12_21_000751) do
 
   create_table "chores", force: :cascade do |t|
     t.string "name"
     t.string "description"
     t.string "user_id"
+  end
+
+  create_table "finishes", force: :cascade do |t|
+    t.string "chores_id"
+    t.string "tools_id"
   end
 
   create_table "tools", force: :cascade do |t|
