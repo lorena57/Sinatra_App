@@ -4,14 +4,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>Document</title>
+    <title>Chore Control</title>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <h1>Chore Control</h1>
+    <h1 class="home" >Chore Control</h1>
     <% if logged_in? %>
-        <p><a href="/home">Home</a> <a href="/routines">Chores</a> <a href="/products">Tools</a></p>
+        <p><a href="/home">Home</a> <a href="/chores">Chores</a> <a href="/tools">Tools</a></p>
         <form action="/logout" method="post">
             <input type="hidden" name="_method" value="delete">
             <input type="submit" value="Log Out">
@@ -19,5 +19,6 @@
     <% end %>
 
     <%= yield %>
+    
 </body>
 </html>

@@ -31,7 +31,7 @@ class ApplicationController < Sinatra::Base
                 redirect '/login'
             else
                 @user = current_user
-                @user_chores = current_user.chore
+                @user_chores = current_user.chores
                 @user_products = current_user.tools
             end
         end

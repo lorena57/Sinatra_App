@@ -1,0 +1,19 @@
+<h1>Update Chore</h1>
+
+<form method="post" action="/chores/<%= @chore.id %>">
+  <input id="hidden" type="hidden" name="_method" value="patch">
+
+   <label for="name">Enter name here:</label>
+   <input type="text" name="name" id="name">
+
+   <label for="chore">Enter description here:</label>
+   <input type="text" name="description" id="description">
+
+   <input type = "submit" onclick="return confirm('Please confirm to submit your changes!');" value = "Submit Changes!">
+
+</form>
+
+<form method ="post" action="/chores/<%= @chore.id %>">
+   <input id="hidden" type="hidden" name="_method" value="delete">
+   <input type="submit" value="delete">
+</form>

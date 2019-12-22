@@ -2,6 +2,10 @@ html {
     background-color: #f6f8fa;
 }
 
+.home {
+    text-align: center;
+}
+
 .danger {
     color: red;
 }

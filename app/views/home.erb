@@ -1,6 +1,6 @@
 <h2>Welcome back,  <%= @user.username %></h2>
 
 <h4>What chore would you like to review?</h4>
-<%= @users.chores.each do |chore|%>
-    <ol><%= chore.name %></ol>
-<%= end %>
+<% @user.chores.each do |clean| %>
+   <ol><%=clean.name%></ol>
+<% end %>
