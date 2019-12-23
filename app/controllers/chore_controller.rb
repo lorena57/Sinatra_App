@@ -2,7 +2,7 @@ class ChoreController < ApplicationController
     
     get '/chores' do
         authenticate
-        @chores = Chore.all
+        @chores = current_user.chores
         erb :'chores/index'
     end
 
@@ -13,9 +13,9 @@ class ChoreController < ApplicationController
 
     post '/chores' do
         u = current_user
-        u.chores.create(name: params[:name], description: params[:description])
+        chore = u.chores.build(name: params[:name], description: params[:description])
  
-        if !!u 
+        if chore.save
             redirect '/chores' 
         else
             @message = "You made an mistake! Add a new chore!"
@@ -25,8 +25,8 @@ class ChoreController < ApplicationController
 
     get '/chores/:id' do
         authenticate
-        if current_user
-            @chore = Chore.find(params[:id])
+        @chore = Chore.find(params[:id])
+        if current_user == @chore.user
             erb :'/chores/show'
         else
             redirect to '/login'
@@ -36,7 +36,7 @@ class ChoreController < ApplicationController
     get '/chores/:id/edit' do
         @chore = Chore.find_by(id: params[:id])
         authenticate_user(@chore)
-            if @chore
+            if @chore.user == current_user
                 erb :'/chores/edit'
             else
                 erb :error, layout: false
@@ -53,7 +53,7 @@ class ChoreController < ApplicationController
     delete '/chores/:id' do
         authenticate
         @chore = Chore.find_by(id: params[:id])
-            if @chore
+            if @chore.user == current_user
                 @chore.destroy
                 redirect '/chores'
             end

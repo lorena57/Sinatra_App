@@ -15,7 +15,7 @@ class SessionsController < ApplicationController
                 @failed = true
                 erb :'sessions/login'
             end
-    end
+    end 
 
     get '/signup' do
       redirect '/home' if logged_in?
@@ -36,5 +36,8 @@ class SessionsController < ApplicationController
       session.clear
       redirect '/'
     end
+
+
+
  
 end
