@@ -12,7 +12,7 @@
     <h1 class="home" >Chore Control</h1>
     <img src="images/images.jpeg" alt="Man folding towel"/> 
     <% if logged_in? %>
-        <p><a href="/home">Home</a> <a href="/chores">Chores</a></p>
+        <p><a href="/home">Home</a> <a href="/chores">Chores</a> <a href="/tools">Tools</a></p>
         <form action="/logout" method="post">
             <input type="hidden" name="_method" value="delete">
             <input type="submit" value="Log Out">

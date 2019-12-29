@@ -32,7 +32,7 @@ class ApplicationController < Sinatra::Base
             else
                 @user = current_user
                 @user_chores = current_user.chores
-                @user_products = current_user.tools
+                @user_tools = current_user.tools
             end
         end
 

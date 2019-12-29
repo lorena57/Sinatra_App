@@ -1,0 +1,15 @@
+
+</h2>Here are all your cleaning tools!</h2>
+
+<% if !@user_tools.empty? %>
+  <ul>
+    <% @user_tools.each do |tool| %>
+      <li><a href= "/tool/<%= tool.id %>"><%= tool.name %></a></li>
+    <% end %>
+  </ul>
+<% else %>
+  <p>You don't currently have any Tools! Would you like to <a href="/tool/new">add one</a>?</p>
+<% end %>
+<br>
+
+<a href="/tool/new">New Tool</a>
