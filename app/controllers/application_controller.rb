@@ -36,7 +36,7 @@ class ApplicationController < Sinatra::Base
             end
         end
 
-        def authenticate_user(routine)
+        def authenticate_user(chore)
             redirect '/home' if !chore
             redirect '/home' if current_user != chore.user
         end
